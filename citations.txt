@@ -1,0 +1,155 @@
+Below the dashed line, include easily understandable and verifiable 
+citations to all the major sources you used for your project, as described
+in the TP document: 
+https://www.cs.cmu.edu/~112/notes/term-project-and-hack112.html#tp-policies
+
+In addition, your code must also include citations directly in the code that 
+make it clear where you use code that is partly or entirely not of your 
+original design, and what the source is for that code.
+------------------------------------>
+Citations:
+
+Main:
+
+The loop follows a standard pygame game structure.
+Iterated on MVC structure to fit our needs using this as starting point:
+https://youtu.be/ek47NMFW_mk?si=UfV1vkNwXiMJOUKD
+Written by us applying what we learnt from 112 as well. Also used this stack overflow post to learn about main game structure:
+https://stackoverflow.com/questions/14700889/pygame-level-menu-states
+We used the above link to learn and as a starting point but modified/iterated 
+significantly. Also used below vids to learn and test pygame:
+https://www.youtube.com/watch?v=blLLtdv4tvo
+https://www.youtube.com/watch?v=AY9MnQ4x3zk&t=13517s
+
+Model:
+
+Initialisation functions written ourselves.
+Functions to change model based on level selected was written ourselves.
+
+Note of slider class and slider related functions (found in view and controller too)
+Some sliders code (cited below) has been adapted from this github repo:  https://github.com/vimichael/Pygame-Tutorials 
+i.e. we studied and understood the code and modified it to implement it for our specific use case
+
+self.controlKeys is a list of keys obtained by AI 
+(we mapped these keys to game functions ourselves).
+
+createShape(self) was written by us, AI was consulted and it suggested using 
+returning a dictionary.
+
+initialiseConfigureScreen(self) was written by us.
+
+createConfigurationSliders(self) was written by us.
+
+createDemoShape(self) was written by us adapted from createShape(self).
+
+update(self) was written by us.
+
+updateGameElement(self) was written by us.
+
+updateShapes(self) was written by us.
+
+updateParticles(self) was written by us.
+
+createShape(self) was written by us.
+
+togglePause(self) was written by us.
+
+setLevel(self,level) was written by us.
+
+applyLevelSettings(self, level) was written by us.
+
+updateSliders(self) was written by us adapted from  github repo cited above.
+
+calculateAsciiSpacing(self) was written by us.
+
+Abhi made this the below in csacademy after getting inspired by Prof Taylor who 
+showed something similar:
+https://academy.cs.cmu.edu/sharing/khakiKitten9158
+These videos and websites were consulted back then and again now:
+https://www.youtube.com/watch?v=p4Iz0XJY-Qk&t=2s
+https://www.youtube.com/watch?v=qw0oY6Ld-L0
+https://en.wikipedia.org/wiki/Transformation_matrix#Rotation
+https://www.youtube.com/watch?v=nvWDgBGcAIM&t=11s
+https://www.youtube.com/watch?v=sQDFydEtBLE
+https://www.youtube.com/watch?v=kECiI8D6j7k
+https://stackoverflow.com/questions/724219/how-to-convert-a-3d-point-into-2d-perspective-projection
+After learning and experimenting a lot over the past couple of weeks we wrote:
+createVertices(self,shapeType, size), createFaces(self,shapeType), 
+
+Helpers:
+
+pointInPolygon(x,y,polygon), rotatePoint(point, angleX, angleY, angleZ),
+project3dTo2d(x, y, z, distance) all based on the resiources above.
+
+resetShape(self,shape) and explodeShape(self,shape) were written with the 
+assistance of AI.
+
+getNormalVector(face, vertices) was suggested by AI and inspired by it as we 
+struggled writing it in the beginning.
+
+getKeyBoxes(self,keys) written ourselves.
+
+View:
+
+draw(self) was written by us.
+
+drawHomeScreen(self) was written by us.
+
+drawConfigureScreen(self) was written by us.
+
+drawGameScreen(self) was written by us.
+
+drawConfigureScreenSliders(self) was adapted from github repo cited above.
+
+drawConfigureScreenTitle(self) was written by us.
+
+drawConfigureScreenButtons(self) first part was written by us second part
+(cited in text) got AI assistance.
+
+drawConfigureScreenElement(self) written by us adapted from drawShape.
+
+drawGameScreen(self) written by us.
+
+
+drawAsciiPolygon(self,points,char,color) is written by us but 
+ChatGPT assisted in helping us learn about drawing a polygon using ASCII characters 
+on the screen. We calculate the bounding box of the polygon, iterate over a grid 
+of points within this bounding box, checks if each point is inside the polygon, 
+and then draws the specified ASCII character at those points 
+
+drawShapes(self) written by us. AI was used to sort the faces by Z-depth and 
+determine the ascii character that would be used based on the brightness.
+
+drawParticles(self) written ourselves.
+
+drawCrosshair(self) written ourselves.
+
+drawGameText(self) written ourselves.
+
+drawKeyBoxes(self) Written by us, used AI to help change text opacity.
+
+createDemo written by use, adapted createShape.
+
+Controller:
+control(self) written ourselves.
+
+checkSlidersControl(self) adapted from github repo cited above.
+
+onMouseMove(self, mouseX, mouseY) written ourselves.
+
+onMousePress(self,mouseX,mouseY) written ourselves.
+
+onKeyPress(self,key) written ourselves.
+
+checkForShapeClicks(self,mouseX,mouseY) written by Abhi. 
+Only part that AI was consulted for this funtion was from the point where we 
+create a bounding box for the shape as Abhi was stuck there. Then after some 
+prompting to teach, Abhi figured out he had to loop over the faces and if the 
+point clicked is inside then it explodes the shape.
+
+checkForShapeClicksKeys(self,key,keyBox) based on checkForShapeClicks(self,mouseX,mouseY) 
+but reimplimented it ourselves.
+
+The pygame documentation online was extreemly helpful throughout this process. 
+We mainly leveraged AI to learn and explore pygame which proved to be a much more 
+efficient librbary to draw shapes with ascii characters.
