@@ -14,7 +14,7 @@ Features:
 - Background Music and SFX (pluh!)
 
 Dependencies: Pygame: pip install pygame-ce
-Run: main.py
+Run: main.py in src
 
 Video Demo: https://www.youtube.com/watch?v=7lITOuuIo-E 
 
